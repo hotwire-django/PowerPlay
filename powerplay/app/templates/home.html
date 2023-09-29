@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <h1>Home</h1>
+    <p class="lead">Welcome to PowerPlay: the ultimate guide to the exquisitly engineered, best-selling 8-bit system in the world.</p>
+    <h3>Systems</h3>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="gb-tab" data-bs-toggle="tab" data-bs-target="#gb" type="button" role="tab" aria-controls="gb" aria-selected="true">The Original</button>
+        </li>
+        <li class="nav-item" role="presentation">
+        <button class="nav-link" id="gbp-tab" data-bs-toggle="tab" data-bs-target="#gbp" type="button" role="tab" aria-controls="gbp" aria-selected="false">Gameboy Pocket</button>
+        </li>
+        <li class="nav-item" role="presentation">
+        <button class="nav-link" id="gbc-tab" data-bs-toggle="tab" data-bs-target="#gbc" type="button" role="tab" aria-controls="gbc" aria-selected="false">Gameboy Color</button>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="gb" role="tabpanel" aria-labelledby="gb-tab">
+            {% include "partials/systems_gb.html" %}
+            {# <turbo-frame id="system_gb" loading="lazy" src="{% url "about_gb" %}">Loading...</turbo-frame> #}
+        </div>
+        <div class="tab-pane fade" id="gbp" role="tabpanel" aria-labelledby="gbp-tab">
+            {% include "partials/systems_gbp.html" %}
+            {# <turbo-frame id="system_gbp" loading="lazy" src="{% url "about_gbp" %}">Loading...</turbo-frame> #}
+        </div>
+        <div class="tab-pane fade" id="gbc" role="tabpanel" aria-labelledby="gbc-tab">
+            {% include "partials/systems_gbc.html" %}
+            {# <turbo-frame id="system_gbc" loading="lazy" src="{% url "about_gbc" %}">Loading...</turbo-frame> #}
+        </div>
+    </div>
+
+{% endblock main %}

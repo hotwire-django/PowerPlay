@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load demotags static %}
+
+{% block script %}
+<script>
+document.addEventListener('turbo:load', function () {
+    Turbo.connectStreamSource(new EventSource("{% url "guestbook_stream" %}"));
+}, false);
+</script>
+
+{# <script type="module" src="{% static "js/charlimit.js" %}"></script> #}
+<script>
+const MAX_LENGTH=20;
+function checkLength(){
+  const commentField = document.getElementById("id_comment");
+  const charsDiv = document.getElementById("remaining_chars");
+  if(commentField.value.length >= MAX_LENGTH){
+    commentField.value = commentField.value.substring(0, MAX_LENGTH)
+  }
+  charsDiv.innerHTML = `${commentField.value.length}/${MAX_LENGTH} chars`
+}
+</script>
+
+{% endblock script %}
+
+{% block main %}
+
+    <h1>Guestbook</h1>
+    <h4>Sign Here</h4>
+    <form action="." method="POST">
+        {% csrf_token %}
+        {{form.as_p|prettyform}}
+        <div class="float-end" data-charlimit-target="remainingChars" id="remaining_chars"></div>
+        <input type="submit" value="Submit" class="btn btn-primary" data-bridgeform-target="submit" data-bridge-title="Submit">
+    </form>
+
+    {# {% include "partials/guestbook_frame.html" %} #}
+
+    <h4>
+        Previous Visitors
+        {# <span class="badge bg-success" id="counter">{% include "streams/guestbook_entry_counter.html"%}</span> #}
+    </h4>
+
+    <div id="guestlist">
+    {% for guest in guestlist  %}
+        <div id="guestbook-{{guest.uuid}}">
+            <b>{{guest.name}}</b> {% if guest.comment %}: {{guest.comment}}{% endif %}
+        </div>
+        {# {% include "streams/guestbook_entry.html" with entry=guest %} #}
+    {% empty %}
+        <h5>End of List</h5>
+    {% endfor %}
+    </div>
+
+{% endblock main %}

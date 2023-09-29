@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "powerplay"
+version = "1.0"
+description = "A Django/Hotwire Tutorial"
+authors = ["Stephen Mitchell"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+Django = "^4.2.4"
+redis = "^5.0.0"
+
+[tool.poetry.dev-dependencies]
+
+[tool.poetry.group.dev.dependencies]
+django-browser-reload = "^1.11.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

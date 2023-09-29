@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block script %}
+<script>
+document.addEventListener("turbo:load", function() {
+    if (window["EventSource"] && window["Turbo"]) {
+        Turbo.connectStreamSource(new EventSource("/sse"));
+    } else {
+        console.warn("Turbo Streams over SSE not available");
+    }
+});
+</script>
+{% endblock script %}
+
+{% block main %}
+    <h1>Server Side Events</h1>
+
+    <div id="messages">
+        <h1>Messages</h1>
+    </div>
+
+{% endblock main %}

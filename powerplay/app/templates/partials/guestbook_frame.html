@@ -1,0 +1,16 @@
+<turbo-frame id="guestbook_frame">
+    <div style="border:2px green dotted">
+    <h4>
+        Previous Visitors
+        <span class="badge bg-success">{{guest_count}}</span>
+    </h4>
+
+    {% for guest in guestlist  %}
+        <div>
+            <b>{{guest.name}}</b> {% if guest.comment %}: {{guest.comment}}{% endif %}
+        </div>
+    {% empty %}
+        <h5>End of List</h5>
+    {% endfor %}
+    </div>
+</turbo-frame>

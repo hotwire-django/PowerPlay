@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block style %}
+    {% comment %}
+        Web browsers do not remove stylesheets or
+        Use `data-turbo-track="reload"` to force a reload when stylesheet/script or added or removed
+    {% endcomment %}
+    <link rel="stylesheet" href="{% static "css/blue_body.css" %}" {# data-turbo-track="reload" #}>
+{% endblock style %}
+
+{% block main %}
+    <h1>Add Stylesheet</h1>
+    <p class="lead">New stylesheet has been added.</p>
+
+    [<a href="{% url 'home' %}">Go Home with Turbo</a>]
+    [<a data-turbo="false" href="{% url 'home' %}">Go Home without Turbo</a>]
+
+{% endblock main %}

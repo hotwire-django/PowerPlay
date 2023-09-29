@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load demotags static %}
+
+{% block main %}
+    <h1>{{game.title}}</h1>
+    {# {% include "partials/edit_title.html" %} #}
+
+    <p class="lead">Released: {{game.release_date}}</p>
+    <dl>
+        <dt>Studio</dt><dd>{{game.studio}}</dd>
+        <dt>Publisher</dt><dd>{{game.publisher}}</dd>
+    </dl>
+
+    {% comment %}
+    {% if game.music_file %}
+        <button class="btn btn-sm btn-info"
+            data-controller="playbutton"
+            data-action="playbutton#set"
+            data-playbutton-title-value="{{game.title|truncatechars:22}}"
+            data-playbutton-image-value="data:image/jpg;base64,{{game.box_art|base64}}"
+            data-playbutton-file-value="{% static game.music_file %}">
+            Play music sample
+        </button>
+    {% endif %}
+    {% endcomment %}
+
+    <p class="lead">{{game.description|safe}}</p>
+    {% for screen in game.screenshot_set.all  %}
+        <img style="width:150px" class="img-thumbnail" src="data:image/jpg;base64,{{screen.image|base64}}"></td>
+    {% endfor%}
+
+    <p>
+        <a class="btn btn-primary" href="{% url 'game_edit' game.slug %}">Edit</a>
+    </p>
+
+
+{% endblock main %}

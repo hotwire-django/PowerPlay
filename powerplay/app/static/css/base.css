@@ -1,0 +1,160 @@
+/* @override 
+	http://127.0.0.1:8000/static/css/base.css */
+body {
+	height:100%
+}
+.wrapper {
+  min-height: 100%;
+}
+.container {
+	padding-left:  .2rem!important;
+	padding-right:  .2rem!important;
+}
+.logo {
+	background-image: url(../img/logo.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	height: 55px;
+	background-position: left;
+}
+.header-color {
+	background-color: #3ac2d0;
+}
+.search-box .btn-primary {
+	background-image: linear-gradient(to bottom, #e7fed5 23%, #91c274 38.5%, #85b26a 62.3%, #436055 71.7%, #385148 97.5%);
+}
+.search-box input.form-control {
+	width: 175px;
+}
+.nav-link {
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.52);
+	font-weight: 600;
+}
+.search-icon {
+	width: 24px;
+}
+ul.errorlist  {
+	margin: 0;
+	padding: 2px;
+	list-style: none;
+	text-decoration:none;
+	color:red;
+	font-size:.9rem;
+}
+
+.favorites {
+	background-color: #3a3b56;
+	color: white;
+	box-shadow: inset 0 1px 3px black;
+	height: 3rem;
+}
+input[type=search] {
+	border-radius: 1rem;
+}
+
+
+input.heart-checkbox[type=checkbox] {
+   display:none;
+}
+
+input.heart-checkbox[type=checkbox] + label
+{
+   background: url(../img/heart1.png);
+   height: 32px;
+   width: 32px;
+   display:inline-block;
+   padding: 0 0 0 0px;
+}
+
+input.heart-checkbox[type=checkbox]:checked + label
+{
+    background: url(../img/heart2.png);
+    height: 32px;
+    width: 32px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+
+
+.mejs_container {
+	display: flex;
+	width: 100%;
+	position: fixed;
+	bottom:  83px;
+	z-index: 999;
+}
+.mejs_container img {
+	border-radius: 5px;
+	height: 60px;
+	box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.1);
+	margin-bottom: -80px;
+}
+
+@media (min-width: 576px) {
+	.mejs_container {
+		width: auto;
+		display: flex;
+		position: fixed;
+		bottom:  0px;
+		right: 0;
+		z-index: 999;
+	}
+	.mejs_container img {
+		border-radius: 5px;
+		height: 90px;
+		box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.1);
+		margin-bottom: -80px;
+	}
+}
+
+
+
+.mejs_container a{
+	text-decoration: none!important;
+	color: white!important;
+}
+
+
+.nav.nav-tabs {
+	font-size: .9rem;
+}
+.nav-tabs .nav-link {
+	padding: .5rem;
+}
+
+
+.sticky-footer {
+  align-items: center;
+  background: white;
+  bottom: 0;
+  box-shadow: 0 -0.2rem 0.4rem 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-evenly;
+  padding: .5rem 0;
+  padding-bottom: calc(.5rem + env(safe-area-inset-bottom));
+  position: sticky;
+  width: 100%;
+  z-index: 1;
+  padding-bottom: 20px;
+}
+.sticky-footer__item {
+  align-items: center;
+  color: #999;
+  display: flex;
+  flex-direction: column;
+  font-size: .8rem;
+  text-decoration: none;
+  letter-spacing: 0;
+  position: relative;
+}
+
+.sticky-footer__item img {
+  margin-bottom: .5rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  
+}
+  
+.sticky-footer__item.active {
+  filter: invert(0.4) sepia(1) saturate(8) hue-rotate(175deg)
+}

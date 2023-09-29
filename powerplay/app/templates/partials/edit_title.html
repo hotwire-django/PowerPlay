@@ -1,0 +1,13 @@
+{% load demotags %}
+
+<turbo-frame id="edit-title">
+{% if form %}
+    <form method="POST" action="{{request.META.PATH_INFO}}">
+        {% csrf_token %}
+        {{form.as_p|prettyform}}
+        <input type="submit" class="btn btn-primary">
+    </form>
+{% else %}
+    <h1>{{game.title}} - <a href="{% url 'edit_title' game.slug %}">Edit</a></h1>
+{% endif %}
+</turbo-frame>

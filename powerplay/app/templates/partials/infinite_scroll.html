@@ -1,0 +1,16 @@
+<turbo-frame id="scroller_{{page.number}}">
+{% for object in page.object_list %}
+    <div>{{object}}</div>
+{% endfor %}
+
+{% comment %}
+{% if page.has_next %}
+<turbo-frame
+    id="scroller_{{page.next_page_number}}"
+    src="{% url "infinite_scroll" page.next_page_number %}"
+    loading="lazy">
+  Loading next page...
+</turbo-frame>
+{% endif %}
+</turbo-frame>
+{% endcomment %}

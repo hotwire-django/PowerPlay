@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load demotags static %}
+
+{% block main %}
+    <h1>Game List</h1>
+
+    <table class="table table-striped">
+        <thead>
+            <th></th>
+            <th>Title</th>
+            <th>Released</th>
+            <th class="d-none d-sm-table-cell">Score</th>
+            <th class="d-none d-sm-table-cell">Publisher</th>
+            <th class="d-none d-sm-table-cell">Studio</th>
+        </thead>
+    {% for game in page.object_list  %}
+        <tr>
+            <td style="width:75px"><img  class="img-thumbnail" src="data:image/jpg;base64,{{game.box_art|base64}}"></td>
+            <td class="align-middle"><a href="{% url 'game_detail' game.slug %}">{{game.title}}</a></td>
+            <td class="align-middle">{{game.release_date}}</td>
+            <td class="d-none d-sm-table-cell align-middle">{{game.review_score}}</td>
+            <td class="d-none d-sm-table-cell align-middle">{{game.publisher}}</td>
+            <td class="d-none d-sm-table-cell align-middle">{{game.studio}}</td>
+
+        </tr>
+    {% endfor %}
+    </table>
+
+    <ul class="pagination d-flex justify-content-center mt-3">
+        <li class="page-item {% if not page.has_previous %}disabled{% endif %}">
+            <a class="page-link" data-turbo-action="replace" href="{% if page.has_previous %}?page={{page.previous_page_number}}{% else %}#{% endif %}">&larr; Previous</a>
+        </li>
+
+        <li class="page-item">
+            <a class="page-link">
+                Page {{ page.number }} of {{ page.paginator.num_pages }}
+            </a>
+        </li>
+
+        <li class="page-item {% if not page.has_next %}disabled{% endif %}">
+            <a class="page-link" data-turbo-action="replace" href="{% if page.has_next %}?page={{page.next_page_number}}{% else %}#{% endif %}">Next &rarr;</a>
+        </li>
+    </ul>
+
+{% endblock main %}

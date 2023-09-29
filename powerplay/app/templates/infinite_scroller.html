@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <h1>Infinite Scroller</h1>
+
+    <turbo-frame id="scroller_1" src="{% url "infinite_scroll" 1 %}">
+
+{% endblock main %}

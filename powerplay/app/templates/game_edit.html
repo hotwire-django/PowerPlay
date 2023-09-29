@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load demotags %}
+
+{% block main %}
+    <h1>Edit {{form.instance.title}}</h1>
+    <form action="." method="POST">
+        {% csrf_token %}
+        {{form.as_p|prettyform}}
+        <a href="javascript:history.back()" class="btn btn-outline-secondary">Back</a>
+        <input type="submit" class="btn btn-primary">
+    </form>
+
+{% endblock main %}
