@@ -9,10 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static "css/base.css" %}">
 
-    {# <script src="{% static "turbo.es2017-umd.js" %}"></script> #}
-    <script type="module">
-      import hotwiredTurbo from 'https://cdn.skypack.dev/@hotwired/turbo';
-    </script>
+    {# <script src="{% static "js/turbo.es2017-umd.js" %}"></script> #}
     <script type="module" src="{% static "js/active_tab.js" %}"></script>
     <script type="module" src="{% static "js/musicplayer.js" %}"></script>
     <script type="module" src="{% static "js/bridgeform.js" %}"></script>
@@ -85,30 +82,25 @@
       </div>
     </footer>
 
+  </div>
+  <div class="sticky-footer d-sm-none">
+    <a data-turbo-action="replace" href="{% url "home" %}" class="sticky-footer__item">
+      <img src="{% static "img/house-solid.svg" %}">
+      Home
+    </a>
+    <a data-turbo-action="replace" href="{% url "game_list" %}" class="sticky-footer__item">
+      <img src="{% static "img/list-solid.svg" %}">
+      Game List
+    </a>
+    <a data-turbo-action="replace" href="{% url "guestbook" %}" class="sticky-footer__item">
+      <img src="{% static "img/signature-solid.svg" %}">
+      Guestbook
+    </a>
+  </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    {% block script %}
-    <script>
-      document.addEventListener('turbo:load', function () {
-      });
-    </script>
-    {% endblock script %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
-
-</div>
-<div class="sticky-footer d-sm-none">
-  <a data-turbo-action="replace" href="{% url "home" %}" class="sticky-footer__item">
-    <img src="{% static "img/house-solid.svg" %}">
-    Home
-  </a>
-  <a data-turbo-action="replace" href="{% url "game_list" %}" class="sticky-footer__item">
-    <img src="{% static "img/list-solid.svg" %}">
-    Game List
-  </a>
-  <a data-turbo-action="replace" href="{% url "guestbook" %}" class="sticky-footer__item">
-    <img src="{% static "img/signature-solid.svg" %}">
-    Guestbook
-  </a>
-</div>
+{% block script %}
+{% endblock script %}
 
 </body></html>
