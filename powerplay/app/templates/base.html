@@ -34,7 +34,7 @@
 
           <form class="mb-0" action="{% url "game_list" %}" method="GET">
           <div class="input-group search-box">
-              <input {# data-turbo-permanent id="searchBox" #} name="q" type="text" class="form-control" placeholder="Search">
+              <input data-turbo-permanent id="searchBox" name="q" type="text" class="form-control" placeholder="Search">
               <button class="btn btn-primary" type="submit" id="button-addon2">
                 <img class="search-icon" src="{% static "img/search.png" %}">
               </button>
