@@ -46,8 +46,8 @@ def guestbook_list(request):
 
             # Method 1) redirect/reload page
             # Simplest & Slowest.
-            messages.success(request, "Your changes have been saved.")
-            return redirect("guestbook")
+            # messages.success(request, "Your changes have been saved.")
+            # return redirect("guestbook")
 
             # Method 2) return Frame
             # Limited to a box of changes.
@@ -59,10 +59,10 @@ def guestbook_list(request):
             # })
 
             # Method 3) return Stream
-            # return render(request, "streams/guestbook_entry.html", {
-            #     "entry": form.cleaned_data,
-            #     "guest_count": fetch_guest_count(),
-            # }, content_type="text/vnd.turbo-stream.html")
+            return render(request, "streams/guestbook_entry.html", {
+                "entry": form.cleaned_data,
+                "guest_count": fetch_guest_count(),
+            }, content_type="text/vnd.turbo-stream.html")
     else:
         form = GuestbookForm(initial={"uuid": request.session["uuid"]})
 

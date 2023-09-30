@@ -8,7 +8,8 @@ document.addEventListener('turbo:load', function () {
 }, false);
 </script>
 
-{# <script type="module" src="{% static "js/charlimit.js" %}"></script> #}
+<script type="module" src="{% static "js/charlimit.js" %}"></script>
+{% comment %}
 <script>
 const MAX_LENGTH=20;
 function checkLength(){
@@ -21,6 +22,7 @@ function checkLength(){
 }
 </script>
 
+{% endcomment %}
 {% endblock script %}
 
 {% block main %}
@@ -38,15 +40,18 @@ function checkLength(){
 
     <h4>
         Previous Visitors
-        {# <span class="badge bg-success" id="counter">{% include "streams/guestbook_entry_counter.html"%}</span> #}
+        <span class="badge bg-success" id="counter">{% include "streams/guestbook_entry_counter.html"%}</span>
     </h4>
 
     <div id="guestlist">
     {% for guest in guestlist  %}
+
+        {% comment %}
         <div id="guestbook-{{guest.uuid}}">
             <b>{{guest.name}}</b> {% if guest.comment %}: {{guest.comment}}{% endif %}
         </div>
-        {# {% include "streams/guestbook_entry.html" with entry=guest %} #}
+        {% endcomment %}
+        {% include "streams/guestbook_entry.html" with entry=guest %}
     {% empty %}
         <h5>End of List</h5>
     {% endfor %}

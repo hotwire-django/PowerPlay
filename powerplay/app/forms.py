@@ -36,9 +36,9 @@ class GuestbookForm(forms.Form):
     comment = forms.CharField(
         widget=forms.Textarea(
             attrs={
-                "onKeyUp": "checkLength()"
-                # "data-charlimit-target": "commentField",
-                # "data-action": "input->charlimit#check",
+                # "onKeyUp": "checkLength()"
+                "data-charlimit-target": "commentField",
+                "data-action": "input->charlimit#check",
             }
         )
     )

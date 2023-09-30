@@ -3,7 +3,6 @@
     <div>{{object}}</div>
 {% endfor %}
 
-{% comment %}
 {% if page.has_next %}
 <turbo-frame
     id="scroller_{{page.next_page_number}}"
@@ -13,4 +12,3 @@
 </turbo-frame>
 {% endif %}
 </turbo-frame>
-{% endcomment %}

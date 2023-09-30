@@ -2,8 +2,8 @@
 {% load demotags static %}
 
 {% block main %}
-    <h1>{{game.title}}</h1>
-    {# {% include "partials/edit_title.html" %} #}
+    {# <h1>{{game.title}}</h1> #}
+    {% include "partials/edit_title.html" %}
 
     <p class="lead">Released: {{game.release_date}}</p>
     <dl>
@@ -11,7 +11,7 @@
         <dt>Publisher</dt><dd>{{game.publisher}}</dd>
     </dl>
 
-    {% comment %}
+
     {% if game.music_file %}
         <button class="btn btn-sm btn-info"
             data-controller="playbutton"
@@ -22,7 +22,7 @@
             Play music sample
         </button>
     {% endif %}
-    {% endcomment %}
+
 
     <p class="lead">{{game.description|safe}}</p>
     {% for screen in game.screenshot_set.all  %}
