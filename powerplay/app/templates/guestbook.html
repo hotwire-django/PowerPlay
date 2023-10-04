@@ -29,7 +29,7 @@ function checkLength(){
 
     <h1>Guestbook</h1>
     <h4>Sign Here</h4>
-    <form action="." method="POST">
+    <form action="." method="POST" data-controller="bridgeform">
         {% csrf_token %}
         {{form.as_p|prettyform}}
         <div class="float-end" data-charlimit-target="remainingChars" id="remaining_chars"></div>
