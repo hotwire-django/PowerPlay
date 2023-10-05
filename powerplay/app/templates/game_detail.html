@@ -29,8 +29,8 @@
         <img style="width:150px" class="img-thumbnail" src="data:image/jpg;base64,{{screen.image|base64}}"></td>
     {% endfor%}
 
-    <p>
-        <a class="btn btn-primary" href="{% url 'game_edit' game.slug %}">Edit</a>
+    <p data-controller="bridgeform">
+        <a data-bridgeform-target="submit" data-bridge-title="Edit" class="btn btn-primary" href="{% url 'game_edit' game.slug %}">Edit</a>
     </p>
 
 

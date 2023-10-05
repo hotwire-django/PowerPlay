@@ -3,11 +3,13 @@
 
 {% block main %}
     <h1>Edit {{form.instance.title}}</h1>
-    <form action="." method="POST">
+    <form action="." method="POST" data-controller="bridgeform">
         {% csrf_token %}
         {{form.as_p|prettyform}}
-        <a href="javascript:history.back()" class="btn btn-outline-secondary">Back</a>
-        <input type="submit" class="btn btn-primary">
+        {% if not turbo_native %}
+            <a href="javascript:history.back()" class="btn btn-outline-secondary">Back</a>
+        {% endif %}
+        <input type="submit" class="btn btn-primary" data-bridgeform-target="submit" data-bridge-title="Submit">
     </form>
 
 {% endblock main %}
