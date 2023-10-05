@@ -5,7 +5,7 @@ window.Stimulus = Application.start()
 Stimulus.register("musicplayer", class extends Controller {
   static targets = [ "audio", "image", "title"]
   connect(){
-    console.info("MusicPlayer Controller connected");
+    //console.info("MusicPlayer Controller connected");
   }
 
   hide(){
