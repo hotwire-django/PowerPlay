@@ -45,7 +45,7 @@ def game_edit(request, slug):
         form = GameEditForm(instance=game)
 
     return render(
-        request, "game_edit.html", {"form": form}, status=422 if form.errors else 200
+        request, "game_edit.html", {"form": form} #, status=422 if form.errors else 200
     )
 
 
