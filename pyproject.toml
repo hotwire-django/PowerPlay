@@ -8,11 +8,11 @@ authors = ["Stephen Mitchell"]
 python = "^3.11"
 Django = "^4.2.4"
 redis = "^5.0.0"
+django-browser-reload = "^1.11.0"
 
 [tool.poetry.dev-dependencies]
 
 [tool.poetry.group.dev.dependencies]
-django-browser-reload = "^1.11.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
