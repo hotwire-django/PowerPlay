@@ -1,6 +1,7 @@
 asgiref==3.7.2 ; python_version >= "3.11" and python_version < "4.0"
 async-timeout==4.0.3 ; python_version >= "3.11" and python_full_version <= "3.11.2"
 django==4.2.4 ; python_version >= "3.11" and python_version < "4.0"
+django-browser-reload==1.11.0 ; python_version >= "3.11" and python_version < "4.0"
 redis==5.0.0 ; python_version >= "3.11" and python_version < "4.0"
 sqlparse==0.4.4 ; python_version >= "3.11" and python_version < "4.0"
 tzdata==2023.3 ; python_version >= "3.11" and python_version < "4.0" and sys_platform == "win32"
