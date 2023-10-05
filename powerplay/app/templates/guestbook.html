@@ -3,9 +3,9 @@
 
 {% block script %}
 <script>
-document.addEventListener('turbo:load', function () {
-    Turbo.connectStreamSource(new EventSource("{% url "guestbook_stream" %}"));
-}, false);
+// document.addEventListener('turbo:load', function () {
+//     Turbo.connectStreamSource(new EventSource("{% url "guestbook_stream" %}"));
+// }, false);
 </script>
 
 {# <script type="module" src="{% static "js/charlimit.js" %}"></script> #}
