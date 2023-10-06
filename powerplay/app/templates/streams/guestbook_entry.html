@@ -1,7 +1,8 @@
 <turbo-stream action="prepend" target="guestlist">
   <template>
     <div id="guestbook-{{entry.uuid}}">
-        <b>{{entry.name}}</b> {% if entry.comment %}: {{entry.comment}}{% endif %} [<a href="{% url 'guestbook_remove_entry' entry.uuid %}">Remove</a>]
+        <b>{{entry.name}}</b> {% if entry.comment %}: {{entry.comment}}{% endif %}
+        {# [<a href="{% url 'guestbook_remove_entry' entry.uuid %}">Remove</a>] #}
     </div>
   </template>
 </turbo-stream>
