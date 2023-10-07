@@ -108,10 +108,6 @@ def event_stream():
             )
 
         if resp:
-            resp += render_to_string(
-                "streams/guestbook_entry_counter.html",
-                {"guest_count": fetch_guest_count()},
-            )
             resp = resp.replace("\n", "")
             yield f"id:{i}\ndata: {resp}\n\n"
             i += 1
