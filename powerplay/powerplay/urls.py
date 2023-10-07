@@ -28,7 +28,7 @@ urlpatterns = [
     path('game/slow/', views_demos.game_list_slow, name="game_list_slow"),
 
     path('infinite_scroller/', TemplateView.as_view(template_name='infinite_scroller.html'), name="infinite_scroller"),
-    path('infinite_scroll/<int:page>', views_demos.infinite_scroll, name="infinite_scroll"),
+    path('scroll_frame/<int:page>', views_demos.scroll_frame, name="scroll_frame"),
 
     path('sse_test', TemplateView.as_view(template_name='sse_demo.html'), name="sse_demo"),
     path('sse', views_demos.sse, name="sse"),

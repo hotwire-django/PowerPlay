@@ -14,7 +14,7 @@ def game_list_slow(request):
     return render(request, "game_list.html", {"page": page})
 
 
-def infinite_scroll(request, page=1):
+def scroll_frame(request, page=1):
     objects = range(1, 1000)
     p = Paginator(objects, 5)
     page = p.page(page)
