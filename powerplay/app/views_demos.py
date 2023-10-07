@@ -18,7 +18,7 @@ def infinite_scroll(request, page=1):
     objects = range(1, 1000)
     p = Paginator(objects, 5)
     page = p.page(page)
-    return render(request, "partials/infinite_scroll.html", {"page": page})
+    return render(request, "partials/scroll_frame.html", {"page": page})
 
 
 def sse(request):
