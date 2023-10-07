@@ -5,9 +5,11 @@ Stimulus.register("charlimit", class extends Controller {
   static values = {
     maxlength: { type: Number, default: 20 },
   }
+
   connect(){
     this.check()
   }
+
   check() {
       if(this.commentFieldTarget.value.length >= this.maxLengthValue){
         this.commentFieldTarget.value = this.commentFieldTarget.value.substring(0, this.maxlengthValue)
