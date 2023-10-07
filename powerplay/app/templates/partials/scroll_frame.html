@@ -6,8 +6,8 @@
 {% comment %}
 {% if page.has_next %}
 <turbo-frame
-    id="scroller_{{page.next_page_number}}"
-    src="{% url "infinite_scroll" page.next_page_number %}"
+    id="scroll_frame_{{page.next_page_number}}"
+    src="{% url "scroll_frame" page.next_page_number %}"
     loading="lazy">
   Loading next page...
 </turbo-frame>
