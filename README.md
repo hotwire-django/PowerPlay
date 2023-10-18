@@ -18,7 +18,7 @@ The tutorial will cover various techniques to make your classic Django app into 
 * Python 3.11 or higher
 
 ## Installation
-* Clone the github repository to your lcoal machine.
+* Clone the github repository to your local machine.
 
 * Install using poetry with `poetry install`
 or use your preferred virtual environment tool and run `pip install -r requirements.txt`
