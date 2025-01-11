@@ -96,7 +96,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # REDIS_URL = "redis://localhost:6379/0"
-REDIS_URL = "redis://default:RedisLabs1234!@redis-12513.c9.us-east-1-4.ec2.cloud.redislabs.com:12513"
+REDIS_URL = "redis://default:4Nwa5ajY0Ff5t7s00xQUyfBzcEwdC3oq@redis-19758.c240.us-east-1-3.ec2.redns.redis-cloud.com:19758"
+
 
 
 # Internationalization
